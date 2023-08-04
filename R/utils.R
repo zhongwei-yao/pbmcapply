@@ -83,7 +83,8 @@ mccollect <- function(...) {
     on.exit(mcexit(1L, structure("fatal error in wrapper code",
                                             class = "try-error")))
     if (isTRUE(mc.set.seed))
-      mc.set.stream()
+      mc.reset.stream()
+      # mc.set.stream()
     mc.interactive <- as.logical(mc.interactive)
     if (isTRUE(mc.interactive))
       mcinteractive(TRUE)
